@@ -31,10 +31,9 @@ using Reexport
 
 
 include("_auxiliary_functions.jl")
-include("_machine_learning_trading.jl")
-include("_my_ML_algorithm.jl")
-include("_plt_tools.jl")
-# include("_auxiliary_functions.jl")
+include("_ML_functions.jl")
+include("_ML_single_stock_analysis.jl")
+include("_plt_functions.jl")
 
 
 end

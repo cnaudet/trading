@@ -1,35 +1,7 @@
 
-using DataFrames
-using CSV
-using Statistics
-using Indicators
-using StatsBase
-
-
 # Load historical price data for the two assets
 # data = CSV.File("historical_data.csv") |> DataFrame
 
-
-# # Define the pairs trading algorithm
-# function pairs_trading_algorithm(data::DataFrame, asset1::Symbol, asset2::Symbol, lookback_period::Int, deviation_threshold::Float64)
-#     # Calculate the historical price ratio
-#     historical_ratio = calculate_price_ratio(data, asset1, asset2, lookback_period)
-    
-#     # Calculate the current price ratio
-#     current_ratio = data[end, asset1] / data[end, asset2]
-    
-#     # Check for deviation from historical average
-#     if current_ratio > (1 + deviation_threshold) * historical_ratio
-#         # Asset 1 is overvalued, consider a short position on asset 1 and a long position on asset 2
-#         println("Generate Signal: Short $asset1, Long $asset2")
-#     elseif current_ratio < (1 - deviation_threshold) * historical_ratio
-#         # Asset 2 is overvalued, consider a long position on asset 1 and a short position on asset 2
-#         println("Generate Signal: Long $asset1, Short $asset2")
-#     else
-#         # No significant deviation, no trade signal
-#         println("No Trade Signal")
-#     end
-# end
 
 function pairs_trading_algorithm(data, asset1, asset2, lookback_period; num_sd=2, zscore_threshold=1.96)
     # Calculate correlation (optional for pair selection)

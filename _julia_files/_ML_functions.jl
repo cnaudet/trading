@@ -94,9 +94,9 @@ function build_model(::Chain; ninput=2, noutput=3)
     # Neural NetworkN
     # Define the model
     model = Chain(
-        Dense(ninput, 64, tanh),   # Input layer with 2 features, output size 64, tanh activation
+        Dense(ninput, 64, tanh),   # Input layer with ninput features, output size 64, tanh activation
         Dense(64, 32, tanh),  # Hidden layer with output size 32, tanh activation
-        Dense(32, noutput),         # Output layer with 3 categories (target classes), linear activation
+        Dense(32, noutput),         # Output layer with noutput categories (target classes), linear activation
         softmax)              # Softmax activation for converting raw outputs to probabilities
 
     return model
