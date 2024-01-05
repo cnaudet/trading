@@ -25,7 +25,7 @@ end
 
 
 # Example usage
-data = CSV.File("_dat/_full_data.csv") |> DataFrame
+data = CSV.File("../_dat/_full_data.csv") |> DataFrame
 asset1 = :UAL
 asset2 = :DAL
 signal = pairs_trading_algorithm(data, asset1, asset2, 30)

@@ -13,7 +13,7 @@ export build_model, train_model, evaluate_model
 function load_historical_data(symbol)
     # url = "https://example.com/historical_data/$symbol.csv"  # Replace with actual data source
     # data = CSV.read(url, DataFrame)
-    data = CSV.File("_dat/$symbol.csv") |> DataFrame
+    data = CSV.File("../_dat/$symbol.csv") |> DataFrame
     # data.Date = Dates.Date.(data.Date)  # Convert date column to Date type
     return select(data, [:Date, :Open, :High, :Low, :Close, :Volume])
 end
